@@ -1,0 +1,481 @@
+/* --------------------------------
+Primary style stuff
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  color: #ffffff;
+  background-color: #ffffff; }
+
+a {
+  color: #AC9BF7;
+  text-decoration: none; }
+
+img {
+  max-width: 100%;
+  box-shadow: -11px 7px 18px 0px rgba(0, 0, 0, 0.17); }
+
+.image-box {
+  padding: 30px; }
+  @media only screen and (min-width: 768px) {
+    .image-box {
+      padding: 5px 65px 15px 65px; } }
+
+h1 {
+  max-width: 80%;
+  z-index: 1;
+  font-size: 55px;
+  line-height: 60px;
+  font-family: "Playfair Display", serif;
+  margin: 0 0 70px 30px;
+  padding-top: 0; }
+  h1:after {
+    position: absolute;
+    content: '';
+    height: 7.5px;
+    width: 65px;
+    margin-top: 90px;
+    left: 30px;
+    background-color: #957EF7; }
+    @media only screen and (min-width: 480px) {
+      h1:after {
+        height: 8px;
+        width: 70px;
+        margin-top: 150px;
+        left: 30px; } }
+    @media only screen and (min-width: 768px) {
+      h1:after {
+        height: 8px;
+        width: 70px;
+        margin-top: 150px;
+        left: 65px; } }
+    @media only screen and (min-width: 1170px) {
+      h1:after {
+        margin-top: 170px; } }
+  @media only screen and (min-width: 480px) {
+    h1 {
+      max-width: 100%;
+      font-size: 120px;
+      line-height: 130px;
+      margin: 0 0 55px 65px; } }
+  @media only screen and (min-width: 1170px) {
+    h1 {
+      max-width: 800px; } }
+  @media only screen and (max-width: 340px) {
+    h1 {
+      max-width: 100%; } }
+
+h2 {
+  max-width: 95%;
+  z-index: 1;
+  font-size: 35px;
+  line-height: 46px;
+  font-family: "Playfair Display", serif;
+  margin: 0 0 50px 0;
+  padding-top: 30px; }
+  h2:after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 50px;
+    margin-top: 65px;
+    left: 40px;
+    background-color: #957EF7; }
+    @media only screen and (min-width: 480px) {
+      h2:after {
+        height: 6px;
+        width: 70px;
+        margin-top: 90px;
+        left: 90px; } }
+    @media only screen and (min-width: 768px) {
+      h2:after {
+        margin-top: 80px;
+        left: 95px; } }
+    @media only screen and (min-width: 1170px) {
+      h2:after {
+        margin-top: 85px;
+        left: 115px; } }
+  @media only screen and (min-width: 480px) {
+    h2 {
+      max-width: 100%;
+      font-size: 50px;
+      line-height: 60px;
+      margin: 0 0 55px 65px; } }
+
+p {
+  font-size: 18px;
+  z-index: 1;
+  font-weight: 500;
+  color: #142223;
+  opacity: 80%;
+  line-height: 28px;
+  text-align: justify;
+  margin: 15px 30px; }
+  @media only screen and (min-width: 480px) {
+    p {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 30px 0 15px 65px; } }
+  @media only screen and (min-width: 768px) {
+    p {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 30px 65px 15px 65px; } }
+  @media only screen and (min-width: 1170px) {
+    p {
+      max-width: 500px; } }
+
+/* --------------------------------
+Section specific style stuff
+-------------------------------- */
+.light-section {
+  background-color: #AC9BF7;
+  background-image: linear-gradient(to bottom right, #FAF2FF, #C0B4F4);
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  @media only screen and (min-width: 768px) {
+    .light-section {
+      padding-top: 65px;
+      padding-bottom: 65px; } }
+  @media only screen and (min-width: 1170px) {
+    .light-section {
+      display: flex;
+      flex-direction: column; } }
+  .light-section h1, .light-section p {
+    color: #142223; }
+  .light-section h2, .light-section p {
+    color: #142223; }
+
+.dark-section {
+  background-color: #142223;
+  background-image: linear-gradient(to bottom, #243233, #142223);
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  @media only screen and (min-width: 768px) {
+    .dark-section {
+      padding-top: 65px;
+      padding-bottom: 65px; } }
+  @media only screen and (min-width: 1170px) {
+    .dark-section {
+      display: flex;
+      flex-direction: column; } }
+  .dark-section h1, .dark-section p {
+    color: #ffffff; }
+  .dark-section h2, .dark-section p {
+    color: #ffffff; }
+
+@media only screen and (min-width: 1170px) {
+  .space {
+    height: 50px; } }
+
+@media only screen and (min-width: 1170px) {
+  .sub-container {
+    margin: 25px 65px;
+    display: inline-flex;
+    background-color: white;
+    height: 300px; }
+    .sub-container .sub-section {
+      margin: 0;
+      padding: 0 0 0 30px;
+      width: 60%; }
+      .sub-container .sub-section#section2 {
+        max-width: 60%; }
+    .sub-container .image-box {
+      padding: 0;
+      margin-top: -2em; }
+      .sub-container .image-box#box1 {
+        max-width: 450px; }
+      .sub-container .image-box#box2 {
+        text-align: right; } }
+
+.sub-section {
+  background-color: #ffffff;
+  padding: 15px 30px 35px 30px; }
+  @media only screen and (min-width: 768px) {
+    .sub-section {
+      padding: 45px 65px 70px 50px;
+      margin: 65px; } }
+  .sub-section h2 {
+    max-width: 65%; }
+    @media only screen and (min-width: 768px) {
+      .sub-section h2 {
+        margin: 0;
+        max-width: 100%; } }
+  .sub-section p {
+    margin: 0;
+    padding: 0; }
+    @media only screen and (min-width: 768px) {
+      .sub-section p {
+        padding-top: 65px; } }
+  @media only screen and (min-width: 480px) {
+    .sub-section {
+      box-shadow: 15px 20px 10px 0px rgba(0, 0, 0, 0.17); } }
+
+@media only screen and (min-width: 1170px) {
+  #image1 {
+    text-align: right;
+    margin-top: -380px;
+    margin-right: 8em; } }
+@media screen and (max-width: 1330px) {
+  #image1 {
+    margin-right: 0; } }
+
+/* --------------------------------
+Stretchy Nav style
+-------------------------------- */
+.cd-stretchy-nav {
+  position: fixed;
+  z-index: 2;
+  top: 35px;
+  right: 5%;
+  pointer-events: none; }
+  .cd-stretchy-nav .stretchy-nav-bg {
+    /* this is the stretching navigation background */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background: #142223;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    -webkit-transition: height 0.2s, box-shadow 0.2s;
+    -moz-transition: height 0.2s, box-shadow 0.2s;
+    transition: height 0.2s, box-shadow 0.2s; }
+    @media only screen and (min-width: 480px) {
+      .cd-stretchy-nav .stretchy-nav-bg {
+        width: 60px;
+        height: 60px; } }
+  .cd-stretchy-nav.nav-is-visible {
+    pointer-events: auto; }
+  .cd-stretchy-nav.nav-is-visible .stretchy-nav-bg {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: block;
+    position: fixed;
+    border-radius: 0; }
+
+.cd-nav-trigger {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  /* replace text with image */
+  overflow: hidden;
+  white-space: nowrap;
+  color: transparent;
+  pointer-events: auto; }
+  @media only screen and (min-width: 480px) {
+    .cd-nav-trigger {
+      height: 60px;
+      width: 60px; } }
+  .cd-nav-trigger span, .cd-nav-trigger span::after, .cd-nav-trigger span::before {
+    /* this is the hamburger icon */
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #ffffff; }
+  .cd-nav-trigger span {
+    /* middle line of the hamburger icon */
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s; }
+  .cd-nav-trigger span::after, .cd-nav-trigger span::before {
+    /* top and bottom lines of the hamburger icon */
+    content: '';
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s; }
+  .cd-nav-trigger span::before {
+    -webkit-transform: translateY(-6px);
+    -moz-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    -o-transform: translateY(-6px);
+    transform: translateY(-6px); }
+  .cd-nav-trigger span::after {
+    -webkit-transform: translateY(6px);
+    -moz-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    -o-transform: translateY(6px);
+    transform: translateY(6px); }
+  .no-touch .cd-nav-trigger:hover ~ .stretchy-nav-bg {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); }
+  .nav-is-visible .cd-nav-trigger {
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    width: 45px;
+    height: 45px; }
+    .nav-is-visible .cd-nav-trigger span {
+      background-color: transparent; }
+    .nav-is-visible .cd-nav-trigger span::before {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+    .nav-is-visible .cd-nav-trigger span::after {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+
+.cd-stretchy-nav ul {
+  position: relative;
+  z-index: 2;
+  padding: 70px 0 20px 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0.3s;
+  -moz-transition: visibility 0.3s;
+  transition: visibility 0.3s;
+  text-align: right; }
+  .cd-stretchy-nav ul a {
+    position: relative;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 calc(1em + 60px) 0 1em;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    transition: color 0.2s; }
+    .cd-stretchy-nav ul a::after {
+      /* navigation item icons */
+      content: '';
+      position: absolute;
+      height: 19px;
+      width: 19px;
+      right: 22px;
+      top: 50%;
+      -webkit-transform: translateY(-50%) scale(0);
+      -moz-transform: translateY(-50%) scale(0);
+      -ms-transform: translateY(-50%) scale(0);
+      -o-transform: translateY(-50%) scale(0);
+      transform: translateY(-50%) scale(0);
+      opacity: .6;
+      background: url(../img/menu-sprite.svg) no-repeat 0 0; }
+    .cd-stretchy-nav ul a::before {
+      /* line visible next to the active navigation item */
+      content: '';
+      position: absolute;
+      width: 3px;
+      height: 16px;
+      top: 50%;
+      right: 60px;
+      -webkit-transform: translateX(3px) translateY(-50%) scaleY(0);
+      -moz-transform: translateX(3px) translateY(-50%) scaleY(0);
+      -ms-transform: translateX(3px) translateY(-50%) scaleY(0);
+      -o-transform: translateX(3px) translateY(-50%) scaleY(0);
+      transform: translateX(3px) translateY(-50%) scaleY(0);
+      background-color: #957EF7; }
+  .cd-stretchy-nav ul li:first-of-type a::after {
+    /* change custom icon using image sprites */
+    background-position: 0 0; }
+  .cd-stretchy-nav ul li:nth-of-type(2) a::after {
+    background-position: -18px 0; }
+  .cd-stretchy-nav ul li:nth-of-type(3) a::after {
+    background-position: -37px 0; }
+  .cd-stretchy-nav ul li:nth-of-type(4) a::after {
+    background-position: -56px 0; }
+  .cd-stretchy-nav ul span {
+    /* navigation item labels */
+    display: block;
+    opacity: 0;
+    -webkit-transform: translateX(-25px);
+    -moz-transform: translateX(-25px);
+    -ms-transform: translateX(-25px);
+    -o-transform: translateX(-25px);
+    transform: translateX(-25px); }
+
+.cd-stretchy-nav.nav-is-visible ul {
+  visibility: visible; }
+  .cd-stretchy-nav.nav-is-visible ul a::after {
+    /* navigation item icons */
+    -webkit-transform: translateY(-50%) scale(1);
+    -moz-transform: translateY(-50%) scale(1);
+    -ms-transform: translateY(-50%) scale(1);
+    -o-transform: translateY(-50%) scale(1);
+    transform: translateY(-50%) scale(1);
+    -webkit-animation: scaleIn 0.15s backwards;
+    -moz-animation: scaleIn 0.15s backwards;
+    animation: scaleIn 0.15s backwards;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s; }
+  .cd-stretchy-nav.nav-is-visible ul a.active {
+    color: #ffffff; }
+    .cd-stretchy-nav.nav-is-visible ul a.active::after {
+      opacity: 1; }
+    .cd-stretchy-nav.nav-is-visible ul a.active::before {
+      -webkit-transform: translateX(3px) translateY(-50%) scaleY(1);
+      -moz-transform: translateX(3px) translateY(-50%) scaleY(1);
+      -ms-transform: translateX(3px) translateY(-50%) scaleY(1);
+      -o-transform: translateX(3px) translateY(-50%) scaleY(1);
+      transform: translateX(3px) translateY(-50%) scaleY(1);
+      -webkit-transition: -webkit-transform 0.15s 0.3s;
+      -moz-transition: -moz-transform 0.15s 0.3s;
+      transition: transform 0.15s 0.3s; }
+  .cd-stretchy-nav.nav-is-visible ul span {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-animation: slideIn 0.1s backwards;
+    -moz-animation: slideIn 0.1s backwards;
+    animation: slideIn 0.1s backwards;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s; }
+  .no-touch .cd-stretchy-nav.nav-is-visible ul a:hover {
+    color: #ffffff; }
+    .no-touch .cd-stretchy-nav.nav-is-visible ul a:hover::after {
+      opacity: 1; }
+    .no-touch .cd-stretchy-nav.nav-is-visible ul a:hover span {
+      -webkit-transform: translateX(-5px);
+      -moz-transform: translateX(-5px);
+      -ms-transform: translateX(-5px);
+      -o-transform: translateX(-5px);
+      transform: translateX(-5px); }
+  .cd-stretchy-nav.nav-is-visible ul li:first-of-type a::after,
+  .cd-stretchy-nav.nav-is-visible ul li:first-of-type span {
+    -webkit-animation-delay: 0.05s;
+    -moz-animation-delay: 0.05s;
+    animation-delay: 0.05s; }
+  .cd-stretchy-nav.nav-is-visible ul li:nth-of-type(2) a::after,
+  .cd-stretchy-nav.nav-is-visible ul li:nth-of-type(2) span {
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    animation-delay: 0.1s; }
+  .cd-stretchy-nav.nav-is-visible ul li:nth-of-type(3) a::after,
+  .cd-stretchy-nav.nav-is-visible ul li:nth-of-type(3) span {
+    -webkit-animation-delay: 0.15s;
+    -moz-animation-delay: 0.15s;
+    animation-delay: 0.15s; }
+  .cd-stretchy-nav.nav-is-visible ul li:nth-of-type(4) a::after,
+  .cd-stretchy-nav.nav-is-visible ul li:nth-of-type(4) span {
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
