@@ -12,6 +12,7 @@ body {
 	}
 	color: $primary-color;
 	background-color: $primary-color;
+
 }
 
 a {
@@ -23,50 +24,23 @@ img {
 	max-width: 100%;
 	box-shadow: $standard-shadow;
 }
-	.image-box {
-		padding: $mobile-margin;
-		@include MQ(M) {
-			padding: 5px $desktop-margin 15px $desktop-margin;
-		}
-	} // Div box holding img to make shadow work
 
 h1 {
 	max-width: 80%;
 	z-index: 1;
-	font-size: 55px;
+	font-size: 50px;
 	line-height: 60px;
 	font-family: $primary-font;
-	margin: 0 0 70px $mobile-margin;
+	margin: 0 0 20px $mobile-margin;
 	padding-top: 0;
-	&:after { // Seperator after headers
-		position: absolute;
-    content:'';
-    height: 7.5px;
-    width: 65px;
-		margin-top: 90px;
-		left: ($desktop-margin - 35px);
-    background-color: $highlight-alt-color;
-		@include MQ(S) {
-			height: 8px;
-	    width: 70px;
-			margin-top: 150px;
-			left: $mobile-margin;
-		}
-		@include MQ(M) {
-			height: 8px;
-	    width: 70px;
-			margin-top: 150px;
-			left: $desktop-margin;
-		}
-		@include MQ(L) {
-			margin-top: 170px;
-		}
-	}
 	@include MQ(S) {
 		max-width: 100%;
 		font-size: 120px;
 		line-height: 130px;
-		margin: 0 0 55px $desktop-margin;
+		margin: 0 0 30px $desktop-margin;
+	}
+	@include MQ(M) {
+		margin: 0 0 20px 0;
 	}
 	@include MQ(L) {
 		max-width: 800px;
@@ -77,46 +51,25 @@ h1 {
 }
 
 h2 {
+	color: $secondary-color;
 	max-width: 95%;
 	z-index: 1;
 	font-size: 35px;
 	line-height: 46px;
 	font-family: $primary-font;
-	margin: 0 0 50px 0;
+	margin: 0 0 20px 0;
 	padding-top: $mobile-margin;
-	&:after { // Seperator after headers
-		position: absolute;
-    content:'';
-    height: 4px;
-    width: 50px;
-		margin-top: 65px;
-		left: ($desktop-margin - 25px);
-    background-color: $highlight-alt-color;
-		@include MQ(S) {
-			height: 6px;
-			width: 70px;
-			margin-top: 90px;
-			left: ($desktop-margin + 25px);
-		}
-		@include MQ(M) {
-			margin-top: 80px;
-			left: ($desktop-margin + 30px);
-		}
-		@include MQ(L) {
-			margin-top: 85px;
-			left: ($desktop-margin + 50px);
-		}
-	}
 	@include MQ(S) {
 		max-width: 100%;
-		font-size: 50px;
-		line-height: 60px;
-		margin: 0 0 55px $desktop-margin;
+		font-size: 45px;
+		line-height: 48px;
+		margin: 0 0 55px ($desktop-margin - 20px);
 	}
 }
 
 p {
 	font-size: 18px;
+	opacity: 0.9;
 	z-index: 1;
 	font-weight: 500;
 	color: $secondary-color;
@@ -132,63 +85,14 @@ p {
 	@include MQ(M) {
 		font-size: 20px;
 		line-height: 30px;
-		margin: 30px $desktop-margin 15px $desktop-margin;
+		margin: 30px $desktop-margin 15px 0;
 	}
 	@include MQ(L) {
 		max-width: 500px;
+		margin: 15px 0;
 	}
 }
 
-
-/* --------------------------------
-Section specific style stuff
--------------------------------- */
-
-	.light-section {
-		background-color: $highlight-color; // Fallback
-		background-image:
-	    linear-gradient( to bottom right,
-	      #FAF2FF, #C0B4F4 );
-		padding-top: $mobile-margin;
-		padding-bottom: $mobile-margin;
-		@include MQ(M) {
-			padding-top: $desktop-margin;
-			padding-bottom: $desktop-margin;
-		}
-		@include MQ(L) {
-			display: flex;
-			flex-direction: column;
-		}
-		h1, p {
-			color: $secondary-color;
-		}
-		h2, p {
-			color: $secondary-color;
-		}
-	}
-
-	.dark-section {
-		background-color: $secondary-color; // Fallback
-		background-image:
-			linear-gradient( to bottom,
-				#243233, #142223 );
-		padding-top: $mobile-margin;
-		padding-bottom: $mobile-margin;
-		@include MQ(M) {
-			padding-top: $desktop-margin;
-			padding-bottom: $desktop-margin;
-		}
-		@include MQ(L) {
-			display: flex;
-			flex-direction: column;
-		}
-		h1, p {
-			color: $primary-color;
-		}
-		h2, p {
-			color: $primary-color;
-		}
-	}
 
 	.space {
 		@include MQ(L) {
@@ -196,75 +100,28 @@ Section specific style stuff
 	 }
 	}
 
-	.sub-container {
-
-		@include MQ(L) {
-			margin: 25px $desktop-margin;
-			display: inline-flex;
-			background-color: white;
-			height: 300px;
-
-			.sub-section {
-				margin: 0;
-				padding: 0 0 0 ($desktop-margin - 35px);
-				width: 60%; 
-				&#section1 {
-
-				}
-				&#section2 {
-					max-width: 60%;
-				}
-			}
-			.image-box {
-				padding: 0;
-				margin-top: -2em;
-				&#box1 {
-					max-width: 450px;
-				}
-				&#box2 {
-					text-align: right;
-				}
-			}
+	.seperator {
+		display: block;
+		width: 65px;
+		height: 7px;
+		background: $highlight-alt-color;
+		margin: 10px 0 15px $mobile-margin;
+		@include MQ(S) {
+			width: 70px;
+			height: 8px;
+			margin: 10px 0 15px 0;
 		}
 	}
-
-	.sub-section {
-		background-color: $primary-color;
-		padding: ($mobile-margin - 15px) $mobile-margin ($mobile-margin + 5px) $mobile-margin;
-		@include MQ(M) {
-			padding: ($desktop-margin - 20px) $desktop-margin ($desktop-margin + 5px) ($desktop-margin - 15px);
-			margin: $desktop-margin;
-		}
-		h2 {
-			max-width: 65%;
-			@include MQ(M) {
-				margin: 0;
-				max-width: 100%;
-			}
-		}
-		p {
-			margin: 0;
-			padding: 0;
-			@include MQ(M) {
-				padding-top: $desktop-margin;
-			}
-		}
-	  @include MQ(S) {
-			box-shadow: $heavy-shadow;
+	.seperator-small {
+		display: block;
+		width: 50px;
+		height: 4px;
+		background: $highlight-alt-color;
+		margin-top: 10px;
+		margin-bottom: 15px;
+		@include MQ(S) {
+			width: 60px;
+			height: 6px;
+			margin-top: 20px;
 		}
 	}
-
-
-
-
-// -- Sytles for specific images (each needs to be positioned differently) -- //
-#image1 {
-	@include MQ(L) {
-		text-align: right;
-		margin-top: -380px;
-		margin-right: 8em;
-	}
-	@media screen and (max-width: 1330px) {
-		margin-right: 0;
-	}
-}

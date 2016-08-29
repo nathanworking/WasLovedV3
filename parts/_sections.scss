@@ -1,0 +1,181 @@
+
+/* --------------------------------
+Section specific style stuff
+-------------------------------- */
+.light-bg {
+  background-color: $highlight-color; // Fallback
+  background-image:
+    linear-gradient( to bottom right,
+      #FAF2FF, #C0B4F4 );
+  padding-bottom: 5px;
+  @include MQ(L) {
+    padding-bottom: 10%;
+  }
+}
+
+	.light-section {
+    max-width: 1170px;
+    width: 90%;
+    margin: 0 auto;
+    padding: $mobile-margin 0;
+ 		@include MQ(M) {
+			padding-top: $desktop-margin;
+			padding-bottom: 10px;
+		}
+		@include MQ(L) {
+			display: flex;
+			flex-direction: column;
+      margin-bottom: 5%;
+		}
+		h1, p {
+			color: $secondary-color;
+		}
+		h2, p {
+			color: $secondary-color;
+		}
+	}
+
+
+.dark-bg {
+  background-color: $secondary-color; // Fallback
+  background-image:
+    linear-gradient( to bottom,
+      #243233, #142223 );
+  padding-bottom: 5px;
+  @include MQ(L) {
+    padding: 25px 0;
+  }
+}
+
+	.dark-section {
+    max-width: 1170px;
+    width: 90%;
+    margin: 0 auto;
+    padding: $mobile-margin 0;
+    @include MQ(M) {
+      padding-top: $desktop-margin;
+      padding-bottom: 10px;
+    }
+    @include MQ(L) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5%;
+    }
+		h1, p {
+			color: $primary-color;
+		}
+		h2, p {
+			color: $primary-color;
+		}
+	}
+
+	.sub-container {
+    background-color: $primary-color;
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px 0;
+
+    @include MQ(M) {
+      background-color: transparent;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      &#container1 {
+        padding-bottom: 0;
+      }
+      &#container2 {
+        padding-bottom: 20px;
+      }
+    }
+
+		@include MQ(L) {
+      display: flex;
+      width: 90%;
+      max-width: 1170px;
+      background-color: transparent;
+
+			&#container1 {
+				flex-direction: row-reverse;
+        height: 260px;
+        margin-bottom: 10%;
+			}
+			&#container2 {
+        height: 290px;
+        margin-bottom: 0;
+			}
+		}
+    .sub-section {
+      width: 90%;
+      margin: 0 auto;
+      @include MQ(S) {
+        box-shadow: $heavy-shadow;
+      }
+      @include MQ(M) {
+        padding: $desktop-margin;
+        background-color: $primary-color;
+      }
+      @include MQ(L) {
+        background-color: $primary-color;
+        padding: $desktop-margin ($desktop-margin * 1.5);
+      }
+  		h2 {
+  			max-width: 65%;
+  			@include MQ(M) {
+  				margin: 0;
+  				max-width: 100%;
+  			}
+  		}
+  		p {
+  			margin: 0;
+  			padding: 0;
+  			@include MQ(M) {
+  				padding-top: 10px;
+          font-size: 18px;
+          line-height: 27px;
+  			}
+  		}
+  	}
+    .image-box {  // To change ONLY the images in sub-container
+      width: 90%;
+    }
+	}
+
+  .image-box {
+    margin: 15px auto;
+    @include MQ(M) {
+      margin: 45px auto;
+    }
+    @include MQ(L) {
+      padding: 0;
+      &#box1 {
+        max-width: 450px;
+        margin-top: -3.5em;
+      }
+      &#box2 {
+        margin-top: -2em;
+      }
+    }
+  }
+
+
+
+
+// -- Sytles for specific images (each needs to be positioned differently) Only needed for the images that are large and with titles -- //
+
+#image1 { // Les in the air foce
+	@include MQ(L) {
+		text-align: right;
+		margin: -380px 0 0 0;
+	}
+}
+#image2 { // Les in Germany (next to car)
+	@include MQ(L) {
+		text-align: right;
+		margin: -450px 0 0 0;
+    img {
+      max-width: 600px;
+    }
+	}
+	@media screen and (max-width: 1330px) {
+		margin-right: 0;
+	}
+}
