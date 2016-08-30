@@ -4,36 +4,74 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500|Playfair+Display:900" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500|Playfair+Display:700,900" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
 	<title>WasLoved Memorial Sites</title>
+
+	<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-74831306-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
 </head>
 <body>
 <header>
-	<nav class="cd-stretchy-nav add-content">
+	<nav id="cd-vertical-nav" class="cd-stretchy-nav add-content nav-is-visible">
 		<a class="cd-nav-trigger" href="#0">
 			Menu
 			<span aria-hidden="true"></span>
 		</a>
 
 		<ul>
-			<li><a href="#information" class="active"><span>Information</span></a></li>
-			<li><a href="#started"><span>Examples</span></a></li>
-			<li><a href="#pricing"><span>Pricing</span></a></li>
-			<li><a href="#start"><span>Start</span></a></li>
+			<li>
+				<a href="#information-nav" class="active" data-number="1">
+					<span>Information</span>
+				</a>
+			</li>
+			<li>
+				<a href="#examples-nav" data-number="2">
+					<span>Examples</span>
+				</a>
+			</li>
+			<li>
+				<a href="#pricing-nav"  data-number="3">
+					<span>Pricing</span>
+				</a>
+			</li>
+			<li>
+				<a href="#start-nav"  data-number="4">
+					<span>Start</span>
+				</a>
+			</li>
 		</ul>
 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
 	</nav>
 </header>
+<section class="cd-intro" id="intro">
+	<div class="cd-intro-content bouncy">
+		<h1>Don't let your memories fade</h1>
+			<span class="seperator"> </span>
+		<h3>Save them online, forever.</h3>
+		<div class="action-wrapper">
+			<a href="#start" class="cd-btn main-action">Get started</a>
+			<a href="#information" class="cd-btn">Learn More</a>
+		</div>
+	</div>
+</section>
 
 <main class="cd-main-content">
 	<!-- main content here -->
-<div class="light-bg">
-	<div class="light-section" id="information">
+<div class="light-bg" id="information">
+	<div class="light-section cd-section"  id="information-nav">
 		<h1> Preserve your Memories </h1>
 		<span class="seperator"> </span>
 			<p>Your loved one lived a remarkable life. A life full of stories worth telling and pictures worth sharing. The easiest way to keep telling and sharing is with a custom memorial website. Send me your stories and photos, and I’ll create a memorial website that you and your family can visit any time you want.</p>
@@ -67,7 +105,7 @@
 </div> <!-- End light BG -->
 
 <div class="dark-bg">
-	<div class="dark-section" id="started">
+	<div class="dark-section cd-section" id="started">
 		<h1> How it Started </h1>
 		<span class="seperator"> </span>
 			<p> I built the first memorial website for my grandfather, Les Anderson. His adventurous spirit, his worldly travels, and his love of life are all reflected on that site, and the reaction from family and friends was amazing. Everyone loved the site and wanted one of their own! </p>
@@ -77,19 +115,184 @@
 	</div>
 </div>
 
-<div class="light-bg">
-	<div class="light-section" id="information">
+<div class="light-bg" id="photo_restoration">
+	<div class="light-section cd-section">
 		<h1> Full Photo Restoration </h1>
 		<span class="seperator"> </span>
-			<p>Your loved one lived a remarkable life. A life full of stories worth telling and pictures worth sharing. The easiest way to keep telling and sharing is with a custom memorial website. Send me your stories and photos, and I’ll create a memorial website that you and your family can visit any time you want.</p>
-			<div class="image-box" id="image1">
-				<img src="img/les-air-force.jpg" alt="My Grandfather Les Anderson in the Air Force">
-			</div>
+			<p>That box of photos in your basement will yellow and fade with time, but my high-quality scanners can preserve them in their full glory. I’ll transform old photographs into high-resolution digital copies, and I’ll load them onto your site so your family and friends can see and download them whenever they want. They’ll be easily accessible for memorials, reunions, scrapbooks, and anything else you can think of.</p>
+			<div class="image-box" id="image-restoration-1"> </div>
+			<div class="image-box" id="image-restoration-2"> </div>
+			<div class="image-box" id="image-restoration-3"> </div>
+			<div class="image-box desktop-only" id="image-restoration-4"> </div>
+			<div class="image-box desktop-only" id="image-restoration-5"> </div>
+			<div class="image-box desktop-only" id="image-restoration-6"> </div>
+			<div class="image-box desktop-only" id="image-restoration-7"> </div>
+			<div class="image-box desktop-only" id="image-restoration-8"> </div>
 
 	</div> <!-- End light Section -->
 </div> <!-- End light BG -->
 
+<div class="dark-bg" id="who">
+	<div class="dark-section cd-section">
+		<h1> Who Builds These </h1>
+		<span class="seperator"> </span>
+		<div class="who-sub-section">
+			<p> I’ve been creating things for a long time and this is one of my most exciting projects to date. Building memorial sites started out as a way to pay tribute to my grandfather, and has evolved into a way for you to pay tribute to your loved ones. Collecting all your photos and memories online is the best way I can think of to preserve the stories of our lives. But it’s not just me..  </p>
+			<p> I’ve even brought a professional writer onboard who can help you tell those stories in a way that will honor your loved one and make you proud. If you’re comfortable writing your memories down, great. She’ll stay in the background and make sure the final site is free of typos. If you’re not, even greater: she’ll work closely with you to help you share your memories bravely and beautifully. You can check out her credentials <a href="http://afterwordscommunications.com/" target="_blank"> on her website. </a> </p>
+		</div>
+		<div class="who-img" id="nathan">
+			<a href="http://nathanworking.com" target="_black">
+				<img src="img/who-nathan.png" alt="Nathan Anderson">
+			</a>
+		</div>
+		<div class="who-img" id="chantel">
+			<a href="http://afterwordscommunications.com/" target="_black">
+				<img src="img/who-chantel.png" alt="Chantel Hamilton">
+			</a>
+		</div>
+
+	</div>
+</div> <!-- End Dark BG -->
+
+<div class="light-bg" id="examples">
+	<div class="light-section cd-section" id="examples-nav">
+		<h1> Perfect Exmpales </h1>
+		<span class="seperator"> </span>
+			<p>Check out an example of not only two types of websites but also the distinct style difference between the sites.</p>
+	</div> <!-- End light Section -->
+
+	<div class="sub-container" id="container1">
+		<div class="sub-section" id="section1">
+			<h2> Les Anderson </h2>
+				<span class="seperator-small"> </span>
+				<a href="http://les.wasloved.com" target="_blank" class="light-btn"> View Site</a>
+		</div>
+		<div class="image-box" id="box1">
+			<img src="img/example-les.png" alt="Example of Sites: Les">
+		</div>
+	</div>
+
+	<div class="sub-container" id="container2">
+		<div class="sub-section" id="section2">
+			<h2> Jo &amp; Bob </h2>
+				<span class="seperator-small"> </span>
+				<a href="http://joandbob.wasloved.com" target="_blank" class="light-btn"> View Site</a>
+		</div>
+		<div class="image-box" id="box2">
+			<img src="img/example-joandbob.png" alt="Example of Sites: Jo &amp; Bob">
+		</div>
+	</div>
+
+</div> <!-- End light BG -->
+
+
+<div class="dark-bg" id="pricing">
+	<div class="dark-section cd-section" id="pricing-nav">
+		<h1> Pricing </h1>
+		<span class="seperator"> </span>
+		  <div class="pricing-box-container">
+				<div class="pricing-box" id="individual">
+					<h2> Individual Site </h2>
+					<span class="seperator-small"> </span>
+						<ul>
+							<li>1 Timeline of life</li>
+							<li>2-3 Custom Stories</li>
+							<li>50 Free Photo Scans</li>
+							<li>Online photo collection</li>
+							<li>Site stays online forever</li>
+						</ul>
+					<span class="currency">$</span> <div class="price"> 1,000 </div>
+				</div>
+				<div class="pricing-box" id="couple">
+					<h2> Couple's Site </h2>
+					<span class="seperator-small"> </span>
+						<ul>
+							<li>Dual Timeline for both lives</li>
+							<li>5-4 Custom Stories</li>
+							<li>100 Free Photo Scans</li>
+							<li>Online photo collection</li>
+							<li>Site stays online forever</li>
+						</ul>
+					<span class="currency">$</span> <div class="price"> 1,500 </div>
+				</div>
+			</div>
+	</div>
+</div> <!-- Eng dark BG -->
+
+
+<div class="light-bg" id="pricing-faq">
+	<div class="light-section cd-section">
+		<h1> Pricing FAQs </h1>
+		<span class="seperator"> </span>
+			<p>Figured you might have some questions</p>
+	</div> <!-- End light Section -->
+
+	<div class="sub-container" id="container1">
+		<div class="sub-section" id="section1">
+			<h2> What about all the ongoing costs? </h2>
+				<span class="seperator-small"> </span>
+				<p>Every website has ongoing monthly fees, but I won’t be passing any of those on to you. One-time pricing gets your memorial website up and running, and after that, you don’t need to worry about ongoing hosting and maintenance fees. I’ll take care of those. Your investment is finite, but your memories will be preserved online forever.</p>
+		</div>
+	</div>
+
+	<div class="sub-container" id="container2">
+		<div class="sub-section" id="section2">
+			<h2> How will you store my photos online? </h2>
+				<span class="seperator-small"> </span>
+				<p>All photos will be stored using DropBox, which lets anyone in your circle of family and friends to see them and use them for scrapbooks, memorials, reunions, etc. DropBox is a trusted file sharing service. With them we have the option to password protect the photos if you prefer them to only be accessible to family members.</p>
+		</div>
+	</div>
+
+	<div class="sub-container" id="container1">
+		<div class="sub-section" id="section1">
+			<h2> I have more than 100 photos. Can you restore those, too? </h2>
+				<span class="seperator-small"> </span>
+				<p>Of course! My high-quality scanners can preserve as many photos as you have. Extra scans are $50 per set of 100. If you have other quantities, just ask. We’ll figure something out together.</p>
+		</div>
+	</div>
+
+	<div class="sub-container" id="container2">
+		<div class="sub-section" id="section2">
+			<h2> How long will it take to build the site? </h2>
+				<span class="seperator-small"> </span>
+				<p>You can expect your site to be completed in 2-3 weeks. If you have more photos or stories, that will increase the timeframe.</p>
+		</div>
+	</div>
+
+</div> <!-- End light BG -->
+
+
+<div class="dark-bg" id="start">
+	<div class="dark-section cd-section" id="start-nav">
+		<h1> Get Started </h1>
+		<span class="seperator"> </span>
+			<p> Just enter your email and you’ll get a quick email from me with everything you need to start. </p>
+			<!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+        <form action="//nathanworking.us12.list-manage.com/subscribe/post?u=e0ef3f842b73f8e5b96522560&amp;id=2dc8ba50aa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	      <div id="mc_embed_signup_scroll">
+	        <div class="mc-field-group">
+	          <input type="email" placeholder="Anderson@NathanWorking.com" name="EMAIL" class="required email email-input-box" id="mce-EMAIL">
+	        </div>
+	        	<div id="mce-responses">
+	        		<div class="response" id="mce-error-response" style="display:none"></div>
+	        		<div class="response" id="mce-success-response" style="display:none"></div>
+	        	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e0ef3f842b73f8e5b96522560_2dc8ba50aa" tabindex="-1" value=""></div>
+	            <div class="mc-button-box"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="mc-button"></div>
+	        </div>
+        </form>
+        </div>
+      <!--End mc_embed_signup-->
+
+	</div>
+</div> <!-- End Dark BG -->
+
 </main>
+
+<footer>
+	<p> A Project By <a href="http://nathanworking.com" target="_blank">Nathan Anderson</a> &amp; <a href="http://afterwordscommunications.com/" target="_blank">Chantel Hamilton</a> </p>
+</footer>
 
 
 <script src="js/jquery-2.1.4.js"></script>
