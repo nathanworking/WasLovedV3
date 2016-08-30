@@ -19,3 +19,22 @@
     @include transform(translateY(-50%));
   }
 }
+
+// define a different bounce animation for h1 and p elements
+
+@mixin bounce($animation, $value1, $value2) {
+  @include keyframes($animation) {
+    0% {
+      opacity: .2;
+      @include transform(translateX($value1));
+    }
+    60% {
+      opacity: .7;
+      @include transform(translateX($value2));
+    }
+    100% {
+      opacity: 1;
+      @include transform(translateX(0));
+    }
+  }
+}

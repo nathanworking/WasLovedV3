@@ -1,18 +1,23 @@
-
 /* --------------------------------
-Stretchy Nav style
+
+Stretchy Nav style - common to:
+ - basic navigation
+ - add-content navigation
+ - edit-content navigation
+
 -------------------------------- */
+
+#cd-vertical-nav {
+	// Default for JS show/hide effect
+	display: none;
+}
 
 .cd-stretchy-nav {
 	position: fixed;
 	z-index: 2;
-	top: 35px;
-	right: 5%;
+	top: 40px;
+	right: 15px;
 	pointer-events: none;
-	@include MQ(L) {
-		top: 50%;
-		right: 25px;
-	}
 
 	.stretchy-nav-bg {
 		/* this is the stretching navigation background */
@@ -20,37 +25,20 @@ Stretchy Nav style
 		z-index: 1;
 		top: 0;
 		right: 0;
-		width: 45px;
-		height: 45px;
+		width: 60px;
+		height: 60px;
 		border-radius: 30px;
 		background: $secondary-color;
 		box-shadow: 0 1px 4px rgba(#000, .2);
 		@include transition(height .2s, box-shadow .2s);
-    @include MQ(S) {
-      width: 60px;
-      height: 60px;
-    }
 	}
-
 	&.nav-is-visible {
 		pointer-events: auto;
 	}
 
 	&.nav-is-visible .stretchy-nav-bg {
-		height: 100vh;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-    display: block;
-    position: fixed;
-    border-radius: 0;
-		@include MQ(L) {
-			border-radius: 50px;
-			width: 60px;
-			top: 50%;
-			right: 25px;
-	    pointer-events: none;
-		}
+		height: 100%;
+		box-shadow: 0 6px 30px rgba(#000, .2);
 	}
 }
 
@@ -59,24 +47,24 @@ Stretchy Nav style
 	z-index: 3;
 	top: 0;
 	right: 0;
-	height: 45px;
-	width: 45px;
+	height: 60px;
+	width: 60px;
 	border-radius: 50%;
 	/* replace text with image */
 	overflow: hidden;
 	white-space: nowrap;
 	color: transparent;
 	pointer-events: auto;
-  @include MQ(S) {
-    height: 60px;
-  	width: 60px;
-  }
+
 	span, span::after, span::before {
 		/* this is the hamburger icon */
 		position: absolute;
-		width: 16px;
+		width: 18px;
 		height: 2px;
 		background-color: $primary-color;
+		@include MQ(L) {
+			background-color: $secondary-color;
+		}
 	}
 
 	span {
@@ -107,14 +95,6 @@ Stretchy Nav style
 	}
 
 	.nav-is-visible & {
-    border: 1.5px solid rgba($primary-color, .7);
-    width: 45px;
-    height: 45px;
-		@include MQ(L) {
-			width: 60px;
-	    height: 60px;
-			border: none;
-		}
 
 		span {
 			background-color: transparent;
@@ -133,7 +113,7 @@ Stretchy Nav style
 .cd-stretchy-nav ul {
 	position: relative;
 	z-index: 2;
-	padding: 70px 0 20px 0;
+	padding: 60px 0 0;
 	visibility: hidden;
 	@include transition(visibility .3s);
 	text-align: right;
@@ -144,20 +124,16 @@ Stretchy Nav style
 		height: 50px;
 		line-height: 50px;
 		padding: 0 calc(1em + 60px) 0 1em;
-		color: rgba($primary-color, .7); // Nav Text Color Mobile
-    font-size: 18px;
+		color: rgba($secondary-color, .7);
+		font-size: 1.4rem;
 		@include transition(color .2s);
-
-		@include MQ(L) {
-			color: rgba($secondary-color, .7); // Nav Text Color Desktop
-		}
 
 		&::after {
 			/* navigation item icons */
 			content: '';
 			position: absolute;
-			height: 19px;
-			width: 19px;
+			height: 18px;
+			width: 18px;
 			right: 22px;
 			top: 50%;
 			@include transform(translateY(-50%) scale(0));
@@ -170,29 +146,33 @@ Stretchy Nav style
 			content: '';
 			position: absolute;
 			width: 3px;
-			height: 16px;
+			height: 18px;
 			top: 50%;
 			right: 60px;
 			@include transform(translateX(3px) translateY(-50%) scaleY(0));
-			background-color: $highlight-alt-color;
+			background-color: $highlight-color;
 		}
 	}
 
 	li:first-of-type a::after {
 		/* change custom icon using image sprites */
-		background-position: 0 0;
+		background-position: -32px 0;
 	}
 
 	li:nth-of-type(2) a::after {
-		background-position: -18px 0;
+		background-position: -64px 0;
 	}
 
 	li:nth-of-type(3) a::after {
-		background-position: -37px 0;
+		background-position: -48px 0;
 	}
 
 	li:nth-of-type(4) a::after {
-		background-position: -56px 0;
+		background-position: 0 0;
+	}
+
+	li:nth-of-type(5) a::after {
+		background-position: -18px 0;
 	}
 
 	span {
@@ -214,11 +194,7 @@ Stretchy Nav style
 	}
 
 	a.active {
-		color: $primary-color; // Current Section Text Color Mobile
-
-		@include MQ(L) {
-			color: $secondary-color; // Current Section Text Color Desktop
-		}
+		color: $secondary-color;
 
 		&::after {
 			opacity: 1;
@@ -233,16 +209,12 @@ Stretchy Nav style
 	span {
 		opacity: 1;
 		@include transform(translateX(0));
-		@include animation(slideIn .1s backwards);
+		@include animation(slideIn .15s backwards);
 		@include transition(transform .2s);
 	}
 
 	.no-touch & a:hover {
-		color: $primary-color; // Hover Section Text Color Mobile
-
-		@include MQ(L) {
-			color: $secondary-color; // Hover Section Text Color Desktop
-		}
+		color: $secondary-color;
 
 		&::after {
 			opacity: 1;
@@ -272,8 +244,12 @@ Stretchy Nav style
 	li:nth-of-type(4) span {
 		@include animation-delay(.2s);
 	}
-}
 
+	li:nth-of-type(5) a::after,
+	li:nth-of-type(5) span {
+		@include animation-delay(.25s);
+	}
+}
 
 /* --------------------------------
 
@@ -282,15 +258,21 @@ add-content navigation style
 -------------------------------- */
 
 .cd-stretchy-nav.add-content {
-	right: 20px;
-	width: 60px;
+	top: 25px;
+	right: 25px;
+	height: 300px;
+	@include MQ(L) {
+		top: 50%;
+		@include center(y);
+		height: 325px;
+		padding: 10px 0 40px 0;
+	}
 
 	.stretchy-nav-bg {
-		background-color: darken($secondary-color, 5%);
-		@include transition(width .2s, box-shadow .2s);
+		background-color: $secondary-color;
+		@include transition(height .2s, box-shadow .2s);
 		@include MQ(L) {
-			border-radius: 50px;
-			width: 60px;
+			@include center(y);
 		}
 	}
 
@@ -300,79 +282,71 @@ add-content navigation style
 }
 
 .cd-stretchy-nav.add-content .cd-nav-trigger {
-	@include center(x);
 	background-color: $secondary-color;
-
-	span {
-		background-color: transparent;
-	}
-
-	span::before {
-		/* used to create the plus icon */
-		@include transform(rotate(90deg));
-	}
-
-	span::after {
-		/* used to create the plus icon */
-		@include transform(rotate(0deg));
+	@include MQ(L) {
+		@include center(y);
+		background-color: $primary-color;
 	}
 }
 
-.cd-stretchy-nav.add-content.nav-is-visible .cd-nav-trigger {
-	box-shadow: 0 4px 30px rgba(#000, .2);
-
-	span::before {
-		@include transform(rotate(-135deg));
-	}
-
-	span::after {
-		@include transform(rotate(-225deg));
-	}
-}
 
 .cd-stretchy-nav.add-content ul {
+	width: 20px;
+	height: 100%;
 	padding-top: 0;
 	@include clearfix;
+	display: flex;
+	flex-direction: column;
+	@include MQ(L) {
+		justify-content: space-around;
+	}
 
 	li {
-		display: inline-block;
-		float: left;
-		width: 60px;
+		height: 20.5px;
+		width: 20px;
+		margin: 15px 0;
 
+		&:nth-of-type(1) {
+			/* space occupied by the navigation trigger mobile */
+			margin-top: 60px;
+			@include MQ(L) {
+				margin-top: 0;
+			}
+		}
 		&:nth-of-type(2) {
-			/* space occupied by the navigation trigger */
-			margin-right: 60px;
+			/* space occupied by the navigation trigger desktop*/
+			@include MQ(L) {
+				margin-bottom: 100px;
+			}
 		}
 	}
 
 	a {
 		padding: 0;
 		height: 60px;
-		width: 100%;
+		display: block;
+		position: relative;
 
 		&::after {
-			top: 50%;
-			left: 22px;
-			right: auto;
 			@include transform(translateY(-50%) scale(0));
-			background-image: url(../img/cd-sprite-2.svg);
+			background-image: url(../img/menu-sprite.svg);
 		}
 	}
 
 	li:first-of-type a::after {
-		background-position: -16px 0px;
+		background-position: 0px -1px;
 	}
 
 	li:nth-of-type(2) a::after {
-		background-position: 0px 0px;
+		background-position: -19px 0px;
 	}
 
 	li:nth-of-type(3) a::after {
-		background-position: -48px 0px;
+		background-position: -38px -1px;
 	}
 
 	li:nth-of-type(4) a::after {
-		background-position: -32px 0px;
+		background-position: -57px 0px;
 	}
 
 	li:first-of-type a::after,
@@ -393,15 +367,15 @@ add-content navigation style
 
 .cd-stretchy-nav.add-content ul span {
 	position: absolute;
-	left: 0;
-	top: -20px;
-	width: 100%;
-	padding: 0.6em 0;
+	right: 80px;
+	top: 10px;
+	padding: .7em .8em;
 	opacity: 0;
 	visibility: hidden;
-	background-color: rgba(#000, .8);
+	background-color: $secondary-color;
+	color: $primary-color;
 	border-radius: 2px;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	line-height: 1;
 	white-space: nowrap;
 	text-align: center;
@@ -413,12 +387,19 @@ add-content navigation style
 		/* triangle below the tooltip */
 		content: '';
 		position: absolute;
-		top: 100%;
-		@include center(x);
+		display: inline-block;
+		-webkit-transform: rotate(270deg);
+		-moz-transform: rotate(270deg);
+		-o-transform: rotate(270deg);
+		-ms-transform: rotate(270deg);
+		transform: rotate(270deg);
+		left: 100%;
 		height: 0;
+		margin-left: -1px;
+		top: 35%;
 		width: 0;
-		border: 4px solid transparent;
-		border-top-color: rgba(#000, .8);
+		border: 6px solid transparent;
+		border-top-color: $secondary-color;
 	}
 }
 
@@ -427,13 +408,19 @@ add-content navigation style
 	@include animation(none);
 }
 
-.no-touch .cd-stretchy-nav.add-content.nav-is-visible ul a:hover span {
-	opacity: 1;
-	visibility: visible;
-	/* reset default style */
-	@include transform(translateX(0));
-}
 
+// Brought back the labels for these
+	.no-touch .cd-stretchy-nav.add-content.nav-is-visible ul a:hover span {
+		opacity: 1;
+		visibility: visible;
+		/* reset default style */
+		@include transform(translateX(0));
+	}
+
+	.cd-stretchy-nav.add-content.nav-is-visible ul a:hover span {
+		opacity: 1;
+		visibility: visible;
+	}
 
 /* --------------------------------
 

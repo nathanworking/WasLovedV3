@@ -1,0 +1,165 @@
+
+// -- Sytles for specific images (each needs to be positioned differently) Only needed for the images that are large and with titles -- //
+
+#image1 { // Les in the air foce
+	@include MQ(L) {
+		text-align: right;
+		margin: -380px 0 0 0;
+	}
+}
+#image2 { // Les in Germany (next to car)
+	@include MQ(L) {
+		text-align: right;
+		margin: -450px 0 0 0;
+    img {
+      max-width: 600px;
+    }
+	}
+	@media screen and (max-width: 1330px) {
+		margin-right: 0;
+	}
+}
+
+// Restoration Images
+#image-restoration-1 {
+  background-image: url(../img/restoration/image-restoration-1.jpg);
+  background-size: cover;
+  max-width: 550px;
+  min-height: 300px;
+  width: 100%;
+
+  @include MQ(M) {
+    background-image: url(../img/restoration/image-restoration-1@2x.jpg);
+    height: 534px;
+  }
+
+  @include MQ(L) {
+    margin: -420px 0 0 530px;
+    width: 550px;
+  }
+}
+#image-restoration-2 {
+  background-image: url(../img/restoration/image-restoration-2.jpg);
+  background-size: cover;
+  max-width: 480px;
+  min-height: 250px;
+  width: 100%;
+
+  @include MQ(M) {
+    background-image: url(../img/restoration/image-restoration-2@2x.jpg);
+    height: 321.52px;
+  }
+
+  @include MQ(L) {
+    margin: -80px 0 0 0;
+    width: 480px;
+  }
+}
+#image-restoration-3 {
+  background-image: url(../img/restoration/image-restoration-3.jpg);
+  background-size: cover;
+  max-width: 400px;
+  min-height: 250px;
+  width: 100%;
+
+  @include MQ(M) {
+    background-image: url(../img/restoration/image-restoration-3@2x.jpg);
+    height: 263px;
+  }
+
+  @include MQ(L) {
+    margin: 45px 0 0 0;
+    width: 400px;
+  }
+}
+#image-restoration-4 {
+  background-image: url(../img/restoration/image-restoration-4.jpg);
+  background-size: cover;
+  max-width: 236px;
+  width: 100%;
+
+  @include MQ(M) {
+    background-image: url(../img/restoration/image-restoration-4@2x.jpg);
+    height: 186px;
+  }
+
+  @include MQ(L) {
+    margin: -500px 0 0 530px;
+    width: 236px;
+  }
+}
+#image-restoration-5 {
+  background-image: url(../img/restoration/image-restoration-5.jpg);
+  background-size: cover;
+  max-width: 285px;
+  width: 100%;
+
+  @include MQ(M) {
+    background-image: url(../img/restoration/image-restoration-5@2x.jpg);
+    height: 186px;
+  }
+
+  @include MQ(L) {
+    margin: -186px 0 0 795px;
+    width: 285px;
+  }
+}
+#image-restoration-6 {
+  background-image: url(../img/restoration/image-restoration-6.jpg);
+  background-size: cover;
+  max-width: 393px;
+  width: 100%;
+
+  @include MQ(M) {
+    background-image: url(../img/restoration/image-restoration-6@2x.jpg);
+    height: 263px;
+  }
+
+  @include MQ(L) {
+    margin: 50px 0 0 440px;
+    width: 393px;
+  }
+}
+#image-restoration-7 {
+  background-image: url(../img/restoration/image-restoration-7.jpg);
+  background-size: cover;
+  max-width: 210px;
+  width: 100%;
+
+  @include MQ(M) {
+    background-image: url(../img/restoration/image-restoration-7@2x.jpg);
+    height: 263px;
+  }
+
+  @include MQ(L) {
+    margin: -263px 0 0 875px;
+    width: 210px;
+  }
+}
+
+
+.who-img {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 630px;
+  img {
+    box-shadow: none;
+  }
+  @include MQ(M) {
+    width: 80%;
+  }
+  @include MQ(L) {
+    width: 630px;
+  }
+}
+  #chantel {
+    @include MQ(L) {
+      margin: -240px 0 0 auto;
+    }
+  }
+
+  #nathan {
+    @include MQ(L) {
+      margin: 120px 0 0 -25px;
+    }
+  }

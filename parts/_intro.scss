@@ -1,0 +1,191 @@
+
+/* --------------------------------
+
+General Style
+
+-------------------------------- */
+
+.cd-intro {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	/* vertically align its content */
+	display: table;
+	overflow: hidden;
+	background: $secondary-color url(../img/intro-bg.png) no-repeat center top;
+	background-size: cover;
+}
+
+.cd-intro-content {
+	/* vertically align inside its parent */
+	height: 100%;
+	padding: 10%;
+	background-image: linear-gradient(-263deg, rgba(23, 38, 41, 1), rgba(23, 38, 41, .7));
+	box-sizing: content-box;
+	@include MQ(L) {
+
+	}
+
+	h1 {
+		font-size: 50px;
+		text-align: left;
+		line-height: 52px;
+		color: $primary-color;
+		@include MQ(M) {
+			margin-bottom: 6%;
+			font-size: 80px;
+			line-height: 100px;
+		}
+		@include MQ(L) {
+			font-size: 115px;
+			line-height: 118px;
+			margin-bottom: 5%;
+		}
+	}
+
+	h3 {
+		font-size: 25px;
+		font-family: $primary-font;
+		font-weight: 700;
+		text-align: left;
+		opacity: .9;
+		line-height: 1.4;
+		margin: 1em 0;
+		@include MQ(M) {
+			margin-bottom: 15%;
+		}
+		@include MQ(L) {
+			font-size: 35px;
+			margin-bottom: 10%;
+		}
+	}
+
+	.seperator {
+		margin-bottom: 4%;
+		@include MQ(M) {
+			margin-bottom: 5%;
+		}
+		@include MQ(L) {
+			margin-bottom: 4%;
+		}
+	}
+
+	.action-wrapper {
+		@include clearfix;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+		bottom: 0;
+		width: 80%;
+
+		@include MQ (M) {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			position: relative;
+		}
+	}
+
+	.action-wrapper > * {
+		float: left;
+	}
+}
+
+.cd-btn {
+	padding: 12px 20px;
+	height: 50px;
+	width: 100%;
+	font-size: 20px;
+	color: $highlight-color;
+	background-color: transparent;
+	border: 3.5px solid $highlight-color;
+	border-radius: 50px;
+	text-align: center;
+	margin-bottom: 1.5em;
+	transition: background-color .4s;
+	transition: border .4s;
+	@include MQ(M) {
+		margin-right: 1.5em;
+	}
+	@include MQ(L) {
+		padding: 16px 20px;
+		height: 60px;
+		margin-right: 1.5em;
+		font-size: 22px;
+		max-width: 250px;
+	}
+	&:nth-of-type(2) {
+		margin-right: 0;
+	}
+	&.main-action {
+		color: $secondary-color;
+		background-color: $highlight-color;
+	}
+}
+
+.cd-intro-content h1,
+.cd-intro-content h1 span,
+.cd-intro-content p,
+.cd-intro-content .cd-btn {
+	opacity: 0;
+	@include animation-duration(.8s);
+	@include animation-delay(.3s);
+	@include animation-fill-mode(forwards);
+
+	.no-cssanimations & {
+		opacity: 1;
+	}
+}
+
+/* --------------------------------
+
+Bouncy
+
+-------------------------------- */
+
+.bouncy.cd-intro-content h1 {
+	@include animation-name(cd-bounce-right);
+}
+
+.bouncy.cd-intro-content p {
+	@include animation-name(cd-bounce-left);
+}
+
+.bouncy.cd-intro-content h1,
+.bouncy.cd-intro-content p {
+	@include animation-duration(.6s);
+}
+
+.bouncy.cd-intro-content .cd-btn {
+	@include animation-name(cd-bounce-rotate);
+}
+
+.bouncy.cd-intro-content .cd-btn {
+	@include animation-duration(.5s);
+}
+
+.bouncy.cd-intro-content .cd-btn.main-action {
+	@include animation-delay(.4s);
+}
+
+@include bounce(cd-bounce-right, -200px, 15px); // mixin inside partials > mixins.scss
+@include bounce(cd-bounce-left, 200px, -15px);
+
+@include keyframes(cd-bounce-rotate) {
+	0% {
+		opacity: .2;
+		@include transform(perspective(800px) rotateX(-80deg));
+	}
+
+	20% {
+		opacity: 1;
+	}
+
+	60% {
+		@include transform(perspective(800px) rotateX(20deg));
+	}
+
+	100% {
+		opacity: 1;
+		@include transform(perspective(800px) rotateX(0));
+	}
+}

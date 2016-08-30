@@ -1,3 +1,9 @@
+// First things first
+*::selection {
+  background: $secondary-color;
+  color: $primary-color;
+}
+
 /* --------------------------------
 Primary style stuff
 -------------------------------- */
@@ -31,6 +37,7 @@ h1 {
 	font-size: 50px;
 	line-height: 60px;
 	font-family: $primary-font;
+	font-weight: 900;
 	margin: 0 0 20px $mobile-margin;
 	padding-top: 0;
 	@include MQ(S) {
@@ -57,6 +64,7 @@ h2 {
 	font-size: 35px;
 	line-height: 46px;
 	font-family: $primary-font;
+	font-weight: 900;
 	margin: 0 0 20px 0;
 	padding-top: $mobile-margin;
 	@include MQ(S) {
@@ -69,12 +77,12 @@ h2 {
 
 p {
 	font-size: 18px;
-	opacity: 0.9;
+	opacity: 0.8;
 	z-index: 1;
 	font-weight: 500;
 	color: $secondary-color;
 	opacity: 80%;
-	line-height: 28px;
+	line-height: 24px;
 	text-align: justify;
 	margin: 15px $mobile-margin;
 	@include MQ(S) {
@@ -83,8 +91,6 @@ p {
 		margin: 30px 0 15px $desktop-margin;
 	}
 	@include MQ(M) {
-		font-size: 20px;
-		line-height: 30px;
 		margin: 30px $desktop-margin 15px 0;
 	}
 	@include MQ(L) {
@@ -94,34 +100,65 @@ p {
 }
 
 
-	.space {
-		@include MQ(L) {
-		 height: 50px;
-	 }
-	}
+.space {
+	@include MQ(L) {
+	 height: 50px;
+ }
+}
 
-	.seperator {
-		display: block;
-		width: 65px;
-		height: 7px;
-		background: $highlight-alt-color;
-		margin: 10px 0 15px $mobile-margin;
-		@include MQ(S) {
-			width: 70px;
-			height: 8px;
-			margin: 10px 0 15px 0;
-		}
+.seperator {
+	display: block;
+	width: 65px;
+	height: 7px;
+	background: $highlight-alt-color;
+	margin: 10px 0 15px $mobile-margin;
+	@include MQ(S) {
+		width: 70px;
+		height: 8px;
+		margin: 10px 0 15px 0;
 	}
-	.seperator-small {
-		display: block;
-		width: 50px;
-		height: 4px;
-		background: $highlight-alt-color;
-		margin-top: 10px;
-		margin-bottom: 15px;
-		@include MQ(S) {
-			width: 60px;
-			height: 6px;
-			margin-top: 20px;
-		}
+}
+.seperator-small {
+	display: block;
+	width: 50px;
+	height: 4px;
+	background: $highlight-alt-color;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	@include MQ(S) {
+		width: 60px;
+		height: 6px;
+		margin-top: 20px;
 	}
+}
+
+.desktop-only {
+  display: none;
+  @include MQ(L) {
+    display: block;
+  }
+}
+
+.light-btn {
+	padding: 12px 30px;
+	height: 50px;
+	width: 100%;
+	font-size: 18px;
+	color: $highlight-color;
+	background-color: transparent;
+	border: 3.5px solid $highlight-color;
+	border-radius: 50px;
+	text-align: center;
+	transition: background-color .4s;
+	transition: border .4s;
+	@include MQ(M) {
+		margin-right: 1.5em;
+	}
+	@include MQ(L) {
+		font-size: 20px;
+		max-width: 250px;
+	}
+	&:nth-of-type(2) {
+		margin-right: 0;
+	}
+}
