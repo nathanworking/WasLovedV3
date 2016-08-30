@@ -45,6 +45,10 @@ Section specific style stuff
   @include MQ(L) {
     padding: 25px 0;
   }
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+  }
 }
 
 	.dark-section {
@@ -64,6 +68,9 @@ Section specific style stuff
 		h1, p {
 			color: $primary-color;
 		}
+    p {
+      font-weight: 400;
+    }
 		h2, p {
 			color: $primary-color;
 		}
@@ -156,26 +163,289 @@ Section specific style stuff
     }
   }
 
-
-
-
-// -- Sytles for specific images (each needs to be positioned differently) Only needed for the images that are large and with titles -- //
-
-#image1 { // Les in the air foce
-	@include MQ(L) {
-		text-align: right;
-		margin: -380px 0 0 0;
-	}
-}
-#image2 { // Les in Germany (next to car)
-	@include MQ(L) {
-		text-align: right;
-		margin: -450px 0 0 0;
-    img {
-      max-width: 600px;
+  .who-sub-section {
+    @include MQ(L) {
+      display: flex;
+      p:first-of-type {
+        width: 450px;
+      }
+      p:last-of-type {
+        width: 600px;
+        max-width: none;
+        padding-left: 45px;
+      }
     }
-	}
-	@media screen and (max-width: 1330px) {
-		margin-right: 0;
-	}
-}
+  }
+
+
+// Specific margin edits for sections (by id) -- Note: Id's are set at the BG div so that both can be controlled via the ID
+  #photo_restoration {
+    padding-bottom: 0px;
+    .cd-section {
+      padding-top: 5%;
+      margin-bottom: 0px;
+    }
+  }
+
+  #examples {
+    padding-bottom: 18%;
+    @include MQ(L) {
+      #container1 {
+        flex-direction: row;
+        .image-box {
+          margin-top: -8.5em;
+        }
+      }
+      #container2 {
+        flex-direction: row-reverse;
+        margin-top: 260px;
+        .image-box {
+          margin-top: -9.5em;
+        }
+      }
+    }
+    .sub-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .seperator-small {
+      margin-left: 45%;
+    }
+    .light-btn {
+      margin: 0 auto;
+    }
+    h2 {
+      max-width: 100%;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+
+  #pricing {
+    &.dark-bg {
+      padding: 10% 0 15% 0;
+      @include MQ(L) {
+        padding: 25px 0;
+      }
+    }
+    .seperator {
+      margin-bottom: 40px;
+      @include MQ(L) {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include MQ(L) {
+      .pricing-box-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+    .pricing-box {
+      max-width: 480px;
+      border-radius: 4px;
+      background: $primary-color;
+      box-shadow: $heavy-shadow;
+      margin: 20px 0;
+      padding: 30px 25px 45px 25px;
+      @include MQ(L) {
+        padding: 30px;
+        width: 455px;
+      }
+      .seperator-small {
+        height: 3px;
+        margin-left: 5px;
+      }
+      h2 {
+        color: $secondary-color;
+        @include MQ(M) {
+          margin-bottom: 20px;
+        }
+      }
+      li {
+        font-size: 20px;
+        opacity: .9;
+        line-height: 1.3;
+        padding-left: 5px;
+        color: $secondary-color;
+        &:before {
+           content: "\2022";
+           padding-right: 5px;
+        }
+      }
+
+      .price {
+        position: absolute;
+        box-shadow: -6px -6px 12px 4px rgba(0,0,0,0.08);
+        width: 205px;
+        height: 60px;
+        padding-top: 5px;
+        padding-left: 15px;
+        color: $primary-color;
+        background-color: darken($highlight-color, 10%);
+        background-image:
+          linear-gradient( to bottom,
+            #957EF7, #856CF3 );
+        border-radius: 50px;
+        font-family: $primary-font;
+        font-weight: 700;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 15px;
+        @include MQ(M) {
+          margin-top: 0;
+          margin-left: 320px;
+        }
+        @include MQ(L) {
+          margin-left: 270px;
+        }
+      }
+
+      .currency {
+        z-index: 5;
+        font-family: $primary-font;
+        font-weight: 700;
+        position: absolute;
+        font-size: 20px;
+        vertical-align: super;
+        line-height: 40px;
+        margin-left: 40px;
+        margin-top: 15px;
+        @include MQ(M) {
+          margin-top: 0;
+          margin-left: 360px;
+        }
+        @include MQ(L) {
+          margin-left: 310px;
+        }
+      }
+
+    }
+
+    #individual {
+      margin-bottom: 100px;
+      @include MQ(L) {
+        margin-bottom: 20px;
+        margin-right: 150px;
+      }
+    }
+
+  }
+
+  #pricing-faq {
+
+    @include MQ(L) {
+      padding: 4% 0;
+    }
+    #container1 {
+      @include MQ(L) {
+        margin-left: 0;
+        margin-right: auto;
+        margin-bottom: 5%;
+      }
+    }
+    #container2 {
+      @include MQ(L) {
+        margin-left: auto;
+        margin-right: 0;
+        margin-bottom: 5%;
+      }
+    }
+
+    .sub-container {
+      @include MQ(L) {
+        height: auto;
+      }
+
+    }
+    .sub-section {
+      @include MQ(L) {
+        height: auto;
+        max-width: 900px;
+        margin-left: ($desktop-margin * 2.5);
+        box-shadow: $soft-shadow;
+      }
+      p {
+        @include MQ(L) {
+          max-width: 100%;
+          padding-bottom: 15px;
+        }
+      }
+    }
+
+    h1 {
+      max-width: 60%;
+    }
+  }
+
+  #start {
+    padding: 5% 0;
+
+    #mc_embed_signup_scroll {
+      display: flex;
+      flex-direction: column;
+      @include MQ(L) {
+        flex-direction: row;
+      }
+    }
+
+    .email-input-box {
+      width: 100%;
+      margin-top: 15px;
+      background: transparent;
+      border-radius: 50px;
+      font-family: $secondary-font;
+      font-size: 20px;
+      padding: 15px 20px;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      &:focus {
+        outline: none;
+      }
+      @include MQ(L) {
+        padding-left: 30px;
+        width: 500px;
+        border: 3px solid $primary-color;
+      }
+    }
+    .mc-button {
+      width: 100%;
+      background: $primary-color;
+      border-radius: 50px;
+      font-family: $secondary-font;
+      font-size: 20px;
+      padding: 15px 80px;
+      border: 0;
+      margin-top: 25px;
+      min-height: 60px;
+      @include MQ(L) {
+        width: 250px;
+        margin-left: 15px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+
+  footer {
+    background-color: $primary-color;
+    color: $secondary-color;
+    min-height: 60px;
+    padding: 20px 0;
+    p {
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      font-size: 16px;
+      @include MQ(L) {
+        font-size: 18px;
+      }
+    }
+    a {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
