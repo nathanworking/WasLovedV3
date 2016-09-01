@@ -342,7 +342,7 @@ Section specific style stuff
     }
     #container1 {
       @include MQ(L) {
-        margin-left: 0;
+        margin-left: auto;
         margin-right: auto;
         margin-bottom: 5%;
       }
@@ -365,7 +365,7 @@ Section specific style stuff
       @include MQ(L) {
         height: auto;
         max-width: 900px;
-        margin-left: ($desktop-margin * 2.5);
+        margin-left: 0;
         box-shadow: $soft-shadow;
       }
       p {
